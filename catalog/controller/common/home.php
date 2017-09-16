@@ -17,5 +17,17 @@ class ControllerCommonHome extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		$this->response->setOutput($this->load->view('common/home', $data));
+
+        /*edit*/
+
+        $this->load->model('catalog/product');
+
+        //$all_products_data = 0;
+
+        //$all_products = $this->model_catalog_product->getAllProducts($all_products_data);
+
+        //print_r('ok');
+
+
 	}
 }
