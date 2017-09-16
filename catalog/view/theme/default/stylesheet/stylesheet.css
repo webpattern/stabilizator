@@ -563,7 +563,7 @@ footer h5 {
 	opacity: 0.8;
 }
 .product-thumb .image img {
-	margin-left: 150px;
+	padding-top: 60px;
 	margin-right: auto;
 }
 .product-grid .product-thumb .image {
@@ -625,10 +625,10 @@ h2.price {
 .product-thumb .price {
 	color: #444;
 	float: left;
-	margin-left: 25px;
+	margin-left: 5px;
 	font-size: 20px;
 	position: absolute;
-	margin-top: 50px;
+	margin-top: 5px;
 	font-weight: 600;
 	padding: 5px;
 	border-radius: 5px;
@@ -652,7 +652,6 @@ h2.price {
 }
 .product-thumb .button-group {
 	overflow: auto;
-	width: 150px;
 	margin: auto;
 }
 .product-list .product-thumb .button-group {
