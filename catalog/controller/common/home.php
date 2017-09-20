@@ -30,7 +30,7 @@ class ControllerCommonHome extends Controller {
 
         $data['limits'] = array();
 
-        $limits = array_unique(array($this->config->get($this->config->get('config_theme') . '_product_limit'), 25, 50, 75, 100));
+        $limits = array_unique(array(16, 25, 50, 75, 100));
 
         sort($limits);
 
@@ -45,7 +45,7 @@ class ControllerCommonHome extends Controller {
         if (isset($this->request->get['limit'])) {
             $limit = (int)$this->request->get['limit'];
         } else {
-            $limit = $this->config->get($this->config->get('config_theme') . '_product_limit');
+            $limit = 16;
         }
 
         $data['limit'] = $limit;
@@ -104,6 +104,7 @@ class ControllerCommonHome extends Controller {
                 'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 425) . '..',
                 'price'       => $price,
                 'special'     => $special,
+                'locations'   => explode(',', $result['location']),
                 'tax'         => $tax,
                 'minimum'     => ($result['minimum'] > 0) ? $result['minimum'] : 1,
                 'rating'      => $rating,
@@ -115,7 +116,7 @@ class ControllerCommonHome extends Controller {
         if (isset($this->request->get['limit'])) {
             $limit = (int)$this->request->get['limit'];
         } else {
-            $limit = $this->config->get($this->config->get('config_theme') . '_product_limit');
+            $limit = 16;
         }
 
         $pagination = new Pagination();

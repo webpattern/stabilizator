@@ -66,8 +66,9 @@
 
               <div class="delivery_self">
                 <span class="delivery_self_span">Самовывоз:</span>
-                <a href="#">Сегодня</a>
+                <a style="cursor: pointer;" id="shop_<?php echo $product['product_id']; ?>" onclick="showBlock(this.id);">Сегодня</a>
               </div>
+
               <div class="delivery_courier">
                 <span class="delivery_courier_span">Курьером:</span>
                 <span>21 сентября</span>
@@ -104,7 +105,18 @@
                 <!--<p><?php echo $product['description']; ?></p>
               </div>
             </div> -->
-            <div style="height: 125px;" class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
+            <div class="location_shop_none" id="shop_<?php echo $product['product_id']; ?>">
+              <ul class="location_name">
+                <?php foreach($product['locations'] as $locations) { ?>
+                <li class="metro_style_li">
+                  <a class="metro_style"><?php echo $locations; ?></a>
+                </li>
+                <?php } ?>
+              </ul>
+            </div>
+
+            <div style="height: 125px;" class="image"><a href="<?php echo $product['href']; ?>">
+            <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
             <p class="description_home"><?php echo $product['description']; ?></p>
           </div>
         </div>
@@ -131,7 +143,7 @@
     $('div.block_name_rating_buttons').addClass('col-sm-3');
 
 
-    function gridFunc(argument) {
+    function gridFunc() {
         $('div.block_name_rating_buttons').removeClass('block_name_rating_buttons').removeClass('col-sm-3').addClass('col-sm-12').addClass('block_list');
         $('p.description_home_visible').removeClass('description_home_visible').addClass('description_home');
         $('div.delivery_list').removeClass('delivery_list').addClass('delivery');
@@ -139,12 +151,21 @@
         $('div.product-grid').removeClass('col-md-4').addClass('col-md-3').removeClass('col-lg-4').addClass('col-lg-3');
     }
 
-    function listFunc(argument) {
+    function listFunc() {
         $('div.block_list').removeClass('block_list').removeClass('col-sm-12').addClass('block_name_rating_buttons').addClass('col-sm-3');
         $('p.description_home').removeClass('description_home').addClass('description_home_visible');
         $('div.delivery').removeClass('delivery').addClass('delivery_list');
         $('div.product-thumb').addClass('product-thumb-list');
 
+    }
+
+    function showBlock($value_id) {
+        var div = $('div#' + $value_id);
+        if(div[0].className == 'location_shop_none') {
+            $('div#' + $value_id).removeClass('location_shop_none').addClass('location_shop_block');
+        } else if(div[0].className == 'location_shop_block') {
+            $('div#' + $value_id).removeClass('location_shop_block').addClass('location_shop_none');
+        }
     }
 </script>
 

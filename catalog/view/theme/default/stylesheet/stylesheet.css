@@ -855,6 +855,7 @@ h2.price {
 	font-size: 10px;
 	width: 79%;
 	margin-left: 3%;
+	text-align: center;
 }
 
 .delivery_list{
@@ -890,4 +891,39 @@ h2.price {
 
 .product-thumb-list{
 	height: 200px !important;
+}
+
+/*new 20.10.2017*/
+
+.location_shop_none{
+	display: none;
+}
+
+.location_shop_block{
+	background: white;
+	width: 185px;
+	border-radius: 5px;
+	border: 1px solid #eaeaea;
+	position: absolute;
+	margin-top: 229px;
+	margin-left: -190px;
+	display: block;
+	box-shadow: -4px 0px 14px #e8e8e8;
+	font-size: 12px;
+	font-weight: 900;
+	z-index: 1000;
+}
+
+.location_name{
+	list-style-type: circle;
+	padding-left: 25px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	cursor: pointer;
+	margin-bottom: auto;
+	padding-right: 15px;
+}
+
+.metro_style{
+	color: #3cadad;
 }
