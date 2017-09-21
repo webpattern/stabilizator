@@ -15,6 +15,8 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
+
+
       <?php if ($categories) { ?>
       <h3><?php echo $text_refine; ?></h3>
       <?php if (count($categories) <= 5) { ?>
@@ -157,6 +159,7 @@
       </div>
       <hr>
 
+      <?php } ?>
 
       <?php if ($thumb || $description) { ?>
       <div class="row">
@@ -169,8 +172,6 @@
       </div>
       <?php } ?>
 
-
-      <?php } ?>
       <?php if (!$categories && !$products) { ?>
       <p><?php echo $text_empty; ?></p>
       <div class="buttons">
@@ -197,7 +198,6 @@
         $('div.delivery_list').removeClass('delivery_list').addClass('delivery');
         $('div.product-thumb').removeClass('product-thumb-list');
         $('div.product-grid').removeClass('col-md-4').addClass('col-md-3').removeClass('col-lg-4').addClass('col-lg-3');
-
     }
 
     function listFunc() {
@@ -205,6 +205,19 @@
         $('p.description_home').removeClass('description_home').addClass('description_home_visible');
         $('div.delivery').removeClass('delivery').addClass('delivery_list');
         $('div.product-thumb').addClass('product-thumb-list');
-
     }
+
+
+    function showImage($value) {
+        var pathImage = $value.src;
+        $('header').append('<img onclick="closeImage();" class="popup_img" src="/image/close_img.png"/><div onclick="closeImage();" class="popup_category"><div class="popup_bg_category"></div><img style="width:100%; cursor: zoom-out; z-index: 10; visibility: visible;" src=' + pathImage + ' class="popup_img_category" /></div>');
+        $(".popup_category").fadeIn();
+        $(".popup_img").fadeIn(800);
+    }
+
+    function closeImage() {
+        $('div.popup_category').remove();
+        $('img.popup_img').remove();
+    }
+
 </script>

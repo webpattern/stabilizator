@@ -15,7 +15,6 @@ class ControllerCommonHeader extends Controller {
 		}
 
 
-
 		if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {
 			$server = $this->config->get('config_ssl');
 		} else {
@@ -34,6 +33,11 @@ class ControllerCommonHeader extends Controller {
 		$data['links'] = $this->document->getLinks();
 		$data['styles'] = $this->document->getStyles();
 		$data['scripts'] = $this->document->getScripts();
+
+    // OCFilter start
+    $data['noindex'] = $this->document->isNoindex();
+    // OCFilter end
+      
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');
 
@@ -99,10 +103,10 @@ class ControllerCommonHeader extends Controller {
 
 		$categories = $this->model_catalog_category->getCategories(0);
 
-        print_r('ok');
+        //print_r('ok');
 
 		foreach ($categories as $category) {
-			if ($category['top']) {
+
 				// Level 2
 				$children_data = array();
 
@@ -127,7 +131,6 @@ class ControllerCommonHeader extends Controller {
 					'column'   => $category['column'] ? $category['column'] : 1,
 					'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
 				);
-			}
 		}
 
 		$data['language'] = $this->load->controller('common/language');

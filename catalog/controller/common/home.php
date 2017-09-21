@@ -25,8 +25,10 @@ class ControllerCommonHome extends Controller {
         $data['button_compare'] = $this->language->get('button_compare');
         $data['text_tax'] = $this->language->get('text_tax');
         $data['button_cart'] = $this->language->get('button_cart');
+        $data['text_all'] = $this->language->get('text_all');
         $data['ok'] = 'ok';
         $this->load->model('catalog/product');
+
 
         $data['limits'] = array();
 
