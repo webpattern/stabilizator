@@ -117,7 +117,7 @@
 
             <div style="height: 125px;" class="image"><a href="<?php echo $product['href']; ?>">
             <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-            <p class="description_home"><?php echo $product['description']; ?></p>
+            <a href="<?php echo $product['href']; ?>" class="description_home"><?php echo $product['description']; ?></a>
           </div>
         </div>
         <?php } ?>
@@ -145,7 +145,7 @@
 
     function gridFunc() {
         $('div.block_name_rating_buttons').removeClass('block_name_rating_buttons').removeClass('col-sm-3').addClass('col-sm-12').addClass('block_list');
-        $('p.description_home_visible').removeClass('description_home_visible').addClass('description_home');
+        $('a.description_home_visible').removeClass('description_home_visible').addClass('description_home');
         $('div.delivery_list').removeClass('delivery_list').addClass('delivery');
         $('div.product-thumb').removeClass('product-thumb-list');
         $('div.product-grid').removeClass('col-md-4').addClass('col-md-3').removeClass('col-lg-4').addClass('col-lg-3');
@@ -153,7 +153,7 @@
 
     function listFunc() {
         $('div.block_list').removeClass('block_list').removeClass('col-sm-12').addClass('block_name_rating_buttons').addClass('col-sm-3');
-        $('p.description_home').removeClass('description_home').addClass('description_home_visible');
+        $('a.description_home').removeClass('description_home').addClass('description_home_visible');
         $('div.delivery').removeClass('delivery').addClass('delivery_list');
         $('div.product-thumb').addClass('product-thumb-list');
 

@@ -631,6 +631,7 @@ h2.price {
 	float: left;
 	margin-left: 5px;
 	font-size: 12px;
+	background: rgba(81, 255, 62, 0.34);
 	position: absolute;
 	font-weight: 600;
 	border-radius: 5px;
@@ -657,6 +658,12 @@ h2.price {
 	width: 150px;
 	margin: auto;
 }
+
+
+.product-thumb .image img:hover {
+	width: 145px;
+}
+
 .product-list .product-thumb .button-group {
 	/*border-left: 1px solid #ddd;*/
 }

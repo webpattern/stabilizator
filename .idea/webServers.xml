@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="a0646297-75b1-4060-8fb8-01135aa2720b" name="stabilizator" url="http://31.31.196.213">
-        <fileTransfer host="31.31.196.213" port="21" rootFolder="/www/xn--80aacyeau1asabmh5a7h.xn--p1ai/">
+        <fileTransfer host="31.31.196.213" port="21" rootFolder="/www/xn--80aacyeau1asabmh5a7h.xn--p1ai">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
