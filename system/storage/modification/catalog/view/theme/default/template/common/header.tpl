@@ -10,6 +10,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><?php echo $title;  ?></title>
+
+<?php if ($noindex) { ?>
+<!-- OCFilter Start -->
+<meta name="robots" content="noindex,nofollow" />
+<!-- OCFilter End -->
+<?php } ?>
+      
 <base href="<?php echo $base; ?>" />
 <?php if ($description) { ?>
 <meta name="description" content="<?php echo $description; ?>" />
@@ -28,8 +35,8 @@
 <meta property="og:site_name" content="<?php echo $name; ?>" />
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
